@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  @font-face {
+    font-family: 'Cutive-Mono' ;
+    src: url('/font/CutiveMono-Regular.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Title-Font';
+    src: url('/font/KarmaFuture.woff2') format('woff2');
+  } 
+  @font-face {
+    font-family: 'Pixel-Regular';
+    src: url('/font/SuperiorPixel.woff2') format('woff2');
+  } 
+ 
+  @font-face {
+    font-family: 'Pixel-bold';
+    src: url('/font/zig.woff2') format('woff2');
+  }
+ 
+  @font-face {
+    font-family: 'Check-font';
+    src: url('/font/checkfont.woff2') format('woff2');
+  } 
+  
+  @font-face {
+    font-family: 'Mine-Regular';
+    src: url('/font/minefont/Minecraft-Regular.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'Mine-Bold';
+    src: url('/font/minefont/Minecraft-Bold.woff2') format('woff2');
+  }    
+};
