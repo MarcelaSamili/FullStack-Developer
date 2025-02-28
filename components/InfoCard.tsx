@@ -3,30 +3,10 @@ import { GridItem } from './ui/GridItem';*/
 
 import { WobbleCard } from './ui/wobble-card';
 
-/*const InfoCard = () => {
-  return (
-    <div>
-      <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
-        {gridItems.map(({ id, area, title, description }) => (
-          <GridItem
-            key={id}
-            id={id}
-            area={area}
-            title={title}
-            description={description}
-          />
-        ))}
-      </ul>
-    </div>
-  );
-};
-export default InfoCard;*/
-//grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2
-
 const InfoCard = () => {
   return (
     <section className="relative h-dvh">
-      <div className="relative boxGrid">
+      <div className="relative grid gap-[5px] md:grid-rows-5 md:grid-cols-5 lg:grid-rows-4 lg:grid-cols-5 text-white font-Cutive-Mono ">
         <WobbleCard containerClassName="div1">
           <p>Tech enthusiast with a passion for development.</p>
         </WobbleCard>

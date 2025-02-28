@@ -6,7 +6,7 @@ export default function Home() {
   return (
     //<FollowerPointerCard>
     <main className="relative bg-bg_primary justify-center items-center">
-      <div className=" ">
+      <div className="relative z-10 justify-center items-center bg-bg_primary ml-10 mr-10 ">
         <HomePage />
         <InfoCard />
       </div>

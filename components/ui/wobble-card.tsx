@@ -37,7 +37,7 @@ export const WobbleCard = ({
         transition: 'transform 0.1s ease-out',
       }}
       className={cn(
-        'mx-auto w-full bg-blue-300 relative  overflow-hidden ',
+        'mx-auto w-full bg-blue-300 relative overflow-hidden ',
         containerClassName
       )}
     >
@@ -55,7 +55,10 @@ export const WobbleCard = ({
               : 'translate3d(0px, 0px, 0) scale3d(1, 1, 1)',
             transition: 'transform 0.1s ease-out',
           }}
-          className={cn('h-full px-5 py-20 sm:px-5', className)}
+          className={cn(
+            'h-full px-[12%] py-[7%] sm:px-5 text-sm md:text-lg lg:text-7xl',
+            className
+          )}
         >
           {/*<Noise />*/}
           {children}
