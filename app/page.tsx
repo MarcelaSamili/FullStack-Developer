@@ -8,6 +8,7 @@ export default function Home() {
     <main className="relative bg-bg_primary justify-center items-center">
       <div className=" ">
         <HomePage />
+        <InfoCard />
       </div>
     </main>
     //</FollowerPointerCard>
