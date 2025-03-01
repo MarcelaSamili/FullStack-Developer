@@ -1,14 +1,16 @@
-import HomePage from '@/components/HomePage';
-import InfoCard from '@/components/InfoCard';
-import { FollowerPointerCard } from '@/components/ui/following-pointer';
+import About from '@/components/About';
+import Hero from '@/components/Hero';
+import Skils from '@/components/Skils';
+//import { FollowerPointerCard } from '@/components/ui/following-pointer';
 
 export default function Home() {
   return (
     //<FollowerPointerCard>
-    <main className="relative bg-bg_primary justify-center items-center">
-      <div className="relative z-10 justify-center items-center bg-bg_primary ml-10 mr-10 ">
-        <HomePage />
-        <InfoCard />
+    <main className="relative bg-bg_primary ">
+      <div className="relative justify-center items-center ml-10 mr-10 ">
+        <Hero />
+        <About />
+        <Skils />
       </div>
     </main>
     //</FollowerPointerCard>

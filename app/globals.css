@@ -8,61 +8,97 @@
     src: url('/font/CutiveMono-Regular.woff2') format('woff2');
   }
   @font-face {
-    font-family: 'Title-Font';
-    src: url('/font/KarmaFuture.woff2') format('woff2');
+    font-family: 'Typo-Thin';
+    src: url('/font/typofont/TypoThin.woff2') format('woff2');
   } 
   @font-face {
-    font-family: 'Pixel-Regular';
-    src: url('/font/SuperiorPixel.woff2') format('woff2');
+    font-family: 'Typo-Regular';
+    src: url('/font/typofont/TypoRegular.woff2') format('woff2');
   } 
  
   @font-face {
-    font-family: 'Pixel-bold';
-    src: url('/font/zig.woff2') format('woff2');
+    font-family: 'Typo-Ligth';
+    src: url('/font/typofont/TypoLight.woff2') format('woff2');
   }
  
   @font-face {
-    font-family: 'Check-font';
-    src: url('/font/checkfont.woff2') format('woff2');
+    font-family: 'Typo-Bold';
+    src: url('/font/typofont/TypoBold.woff2') format('woff2');
   } 
   
   @font-face {
-    font-family: 'Mine-Regular';
-    src: url('/font/minefont/Minecraft-Regular.woff2') format('woff2');
+    font-family: 'Typo-Italic';
+    src: url('/font/typofont/TypoItalic.woff2') format('woff2');
   }
   
   @font-face {
     font-family: 'Mine-Bold';
     src: url('/font/minefont/Minecraft-Bold.woff2') format('woff2');
-  }    
+  } 
+  @font-face {
+    font-family: 'Small-Type';
+    src: url('/font/typofont/SmallTypeWriting.woff2') format('woff2');
+  }     
 };
 
 
 @layer utilities { 
-
-.div1 {
-  grid-area: 2 / 2 / 3 / 5;
-  border-radius: 0px 20px 0px 20px;
-}
-
-.div2 {
-  grid-area: 3 / 1 / 5 / 5;
-  border-radius: 0px 0px 0px 0px;
-}
-
-.div3 {
-  grid-area: 1 / 1 / 3 / 1;
-  border-radius: 30px 0px 0px 0px;
-}
-
-.div4 {
-  grid-area: 1 / 2 / 2 / 7;
-
-  border-radius: 0px 0px 0px 0px;
-}
-
-.div5 {
-  grid-area: 2 / 5 / 5 / 7;
-  border-radius: 0px 0px 30px 0px;
-}
+  .container {
+    width: 100%;
+    
+  }
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+    }
+  }
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1536px;
+    }
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 77.5rem /* 1240px */;
+  }
+  .container {
+    padding-left: 1.25rem /* 20px */;
+    padding-right: 1.25rem /* 20px */;
+  }
+  @media (min-width: 768px) {
+    .container {
+      padding-left: 2.5rem /* 40px */;
+      padding-right: 2.5rem /* 40px */;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 3.75rem /* 60px */;
+      padding-right: 3.75rem /* 60px */;
+    }
+  }
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 87.5rem /* 1400px */;
+    }
+  }
+  
 }
