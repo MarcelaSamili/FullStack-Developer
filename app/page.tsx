@@ -1,6 +1,7 @@
 import About from '@/components/About';
 import Hero from '@/components/Hero';
 import Skils from '@/components/Skils';
+import ScrollMooter from '@/components/ui/scroll-mooter';
 //import { FollowerPointerCard } from '@/components/ui/following-pointer';
 
 export default function Home() {
@@ -8,9 +9,11 @@ export default function Home() {
     //<FollowerPointerCard>
     <main className="relative bg-bg_primary ">
       <div className="relative justify-center items-center ml-10 mr-10 ">
-        <Hero />
-        <About />
-        <Skils />
+        <ScrollMooter>
+          <Hero />
+          <About />
+          <Skils />
+        </ScrollMooter>
       </div>
     </main>
     //</FollowerPointerCard>

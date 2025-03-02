@@ -8,8 +8,8 @@ import { deflate } from 'zlib';
 
 const Skils = () => {
   return (
-    <section className="relative justify-center items-center">
-      <div className="relative  container justify-center items-center">
+    <section className="relative flex justify-center items-center overflow-hidden m-full">
+      <div className="relative container flex justify-center items-center overflow-hidden">
         <Terminal className="overflow-hidden">
           <TypingAnimation>&gt; npm i skils@latest </TypingAnimation>
 

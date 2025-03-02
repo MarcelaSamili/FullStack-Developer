@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body{
+  scroll-snap-type: y mandatory;
+}
+
+main{
+  scroll-snap-type: y mandatory;
+}
+
 @layer base{
   @font-face {
     font-family: 'Cutive-Mono' ;

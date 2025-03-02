@@ -5,13 +5,11 @@ const About = () => {
   return (
     <section
       id="About"
-      className="relative container flex justify-center items-center h-dvh bg-stone-600"
+      className="relative container flex justify-start items-center h-dvh bg-stone-600"
     >
       <div className="relative text-justify bg-neutral-500">
-        <div className="">
-          <TypingAnimation className="text-white text-lg font-Cutive-Mono font-bold">
-            Hi! Dare!
-          </TypingAnimation>
+        <div className="text-white text-lg font-Cutive-Mono font-bold">
+          Hi! Dare!
         </div>
         <div>
           <TypingAnimation className="text-white text-lg font-Cutive-Mono font-medium">
