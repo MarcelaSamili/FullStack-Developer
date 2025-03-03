@@ -10,20 +10,17 @@ import { motion } from 'motion/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const Navigation = () => {
-  // Estado para verificar se o código está no lado do cliente
   const [isClient, setIsClient] = useState(false);
-  const [lenis, setLenis] = useState<Lenis | null>(null); // Adiciona o estado para Lenis
+  const [lenis, setLenis] = useState<Lenis | null>(null);
 
   useEffect(() => {
-    // Verifica se estamos no lado do cliente (navegador)
     if (typeof window !== 'undefined') {
-      setIsClient(true); // Quando o código estiver no cliente, atualizamos o estado
+      setIsClient(true);
     }
   }, []);
 
   useEffect(() => {
     if (isClient) {
-      // Inicializa o Lenis apenas no lado do cliente
       const lenisInstance = new Lenis({
         duration: 1.2,
         easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -33,7 +30,7 @@ const Navigation = () => {
         infinite: false,
       });
 
-      setLenis(lenisInstance); // Salva a instância de Lenis no estado
+      setLenis(lenisInstance);
 
       lenisInstance.on('scroll', ScrollTrigger.update);
 
@@ -50,15 +47,14 @@ const Navigation = () => {
         gsap.ticker.remove(time => lenisInstance.raf(time * 1000));
       };
     }
-  }, [isClient]); // Apenas rodar após o lado do cliente ser detectado
+  }, [isClient]);
 
   const scrollToSection = (id: string) => {
     if (lenis) {
-      // Verifica se o Lenis foi inicializado
       const section = document.getElementById(id);
       if (section) {
         const offsetTop = section.offsetTop;
-        lenis.scrollTo(offsetTop); // Usando a instância de Lenis já inicializada
+        lenis.scrollTo(offsetTop);
       }
     }
   };
