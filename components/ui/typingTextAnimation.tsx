@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { motion, MotionProps } from 'motion/react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 interface TypingAnimationProps extends MotionProps {
   children: string;
@@ -30,32 +30,40 @@ export function TypingAnimation({
   const [started, setStarted] = useState(false);
   const elementRef = useRef<HTMLElement | null>(null);
 
+  const startTyping = useCallback(() => {
+    setDisplayedText(''); // Resetar texto antes de reiniciar animação
+    setStarted(false);
+
+    setTimeout(() => {
+      setStarted(true);
+    }, delay);
+  }, [delay]);
+
   useEffect(() => {
     if (!startOnView) {
-      const startTimeout = setTimeout(() => {
-        setStarted(true);
-      }, delay);
-      return () => clearTimeout(startTimeout);
+      startTyping();
+      return;
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            setStarted(true);
-          }, delay);
-          observer.disconnect();
+          startTyping();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.5 } // Define quando ativar (50% visível na tela)
     );
 
     if (elementRef.current) {
       observer.observe(elementRef.current);
     }
 
-    return () => observer.disconnect();
-  }, [delay, startOnView]);
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, [startOnView, startTyping]);
 
   useEffect(() => {
     if (!started) return;

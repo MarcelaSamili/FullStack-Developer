@@ -10,6 +10,7 @@ export const navItems = [
 
 export const projects = [
   {
+    id: 1,
     title: 'Web Site Enlace Technology',
     description:
       'An Enterprise Website built using Next.js, React.js, Tailwind CSS, AcertenityUI, Motion, MagicUI, and GSAP.',
@@ -17,18 +18,21 @@ export const projects = [
     link: 'https://github.com/MarcelaSamili',
   },
   {
+    id: 2,
     title: 'Awwards-Website',
     description: 'Clone do site Zentry.com, usando ReactJs, Tailwind CSS, GSAP',
     img: '/img/02.png',
     link: 'https://github.com/MarcelaSamili/Awwwards-Website',
   },
   {
+    id: 3,
     title: 'BainWave',
     description: 'A webapp using ReactJS + Vite, TailwindCss',
     img: '/img/03.png',
     link: 'https://github.com/MarcelaSamili/BraingWave-project',
   },
   {
+    id: 4,
     title: 'Portfolio Project',
     description:
       'My Portifolio Project - NextJs, ReactJs, TailwindCss / Motion and AceternityUI...',
@@ -36,12 +40,14 @@ export const projects = [
     link: 'https://github.com/MarcelaSamili/MyPortifolio',
   },
   {
+    id: 5,
     title: 'NextApp',
     description: 'An webapp using NextJS, ReactJs, TypeScript and TailwindCss',
     img: '/img/05.png',
     link: 'https://github.com/MarcelaSamili/NextApp',
   },
   {
+    id: 6,
     title: 'SubsTraskAPI',
     description: 'Build and Deploy my First Production-Ready API.',
     img: '/img/06.png',

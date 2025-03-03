@@ -4,11 +4,11 @@
 
 
 body{
-  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 main{
-  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 @layer base{
