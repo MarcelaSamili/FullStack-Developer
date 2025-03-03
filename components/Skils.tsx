@@ -8,10 +8,13 @@ import { deflate } from 'zlib';
 
 const Skils = () => {
   return (
-    <section className="relative flex justify-center items-center overflow-hidden m-full">
-      <div className="relative container flex justify-center items-center overflow-hidden">
+    <section
+      id="skills"
+      className="relative flex justify-center items-center overflow-hidden m-full h-dvh"
+    >
+      <div className="relative container h-full flex justify-center items-center overflow-hidden">
         <Terminal className="overflow-hidden">
-          <TypingAnimation>&gt; npm i skils@latest </TypingAnimation>
+          <TypingAnimation>&gt; npm i skills@latest </TypingAnimation>
 
           <AnimatedSpan delay={1500} className="text-green-400">
             <span>✔ Preflight checks.</span>

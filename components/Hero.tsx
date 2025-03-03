@@ -2,7 +2,10 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className="relative bg-slate-500 container flex flex-col justify-center items-center h-dvh">
+    <div
+      id="hero"
+      className="relative container flex flex-col justify-center items-center h-dvh"
+    >
       <div className="relative justify-between  w-full flex flex-wrap lg:flex-nowrap xl:flex-nowrap ">
         <div
           className="relative p-2 h-full text-4xl   

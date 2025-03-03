@@ -4,10 +4,10 @@ import { TypingAnimation } from './ui/typingTextAnimation';
 const About = () => {
   return (
     <section
-      id="About"
-      className="relative container flex justify-start items-center h-dvh bg-stone-600"
+      id="about"
+      className="relative container flex justify-start items-center h-dvh"
     >
-      <div className="relative text-justify bg-neutral-500">
+      <div className="relative text-justify h-[50%] w-full ">
         <div className="text-white text-lg font-Cutive-Mono font-bold">
           Hi! Dare!
         </div>

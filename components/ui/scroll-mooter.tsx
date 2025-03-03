@@ -1,5 +1,5 @@
 'use client';
-import { motion, useScroll, useSpring, useTransform } from 'motion/react';
+/*import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import React, { FC, ReactNode, useEffect, useRef, useState } from 'react';
 
 interface ScrollMooterProps {
@@ -37,7 +37,7 @@ const ScrollMooter: FC<ScrollMooterProps> = ({ children }) => {
   });
 
   const y = useTransform(smoothProgress, value => {
-    return value * -(contentHeight - windowHeight);
+    return value * -(contentHeight + windowHeight);
   });
 
   return (
@@ -49,4 +49,36 @@ const ScrollMooter: FC<ScrollMooterProps> = ({ children }) => {
   );
 };
 
-export default ScrollMooter;
+export default ScrollMooter;*/
+
+/*import React, { Children, FC, useEffect } from 'react';
+import Lenis from 'lenis';
+
+interface ScrollMooterProps {
+  children: ReactNode;
+}
+
+// Initialize Lenis
+const lenis = new Lenis({
+  autoRaf: true,
+});
+
+// Listen for the scroll event and log the event data
+lenis.on('scroll', e => {
+  console.log(e);
+});
+
+const Scrollmooter: FC<ScrollMooterProps> = ({ children }) => {
+  useEffect(() => {
+    const lenis = new Lenis();
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }, []);
+};
+
+return <motion.div>{children}</motion.div>;
+
+export default Scrollmooter;*/
