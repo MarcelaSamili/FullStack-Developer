@@ -11,6 +11,7 @@ import 'lenis/dist/lenis.css';
 import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ContactMe from '@/components/Manssage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,6 +67,9 @@ export default function Home() {
         </motion.div>
         <motion.div>
           <Projects />
+        </motion.div>
+        <motion.div>
+          <ContactMe />
         </motion.div>
       </div>
     </main>

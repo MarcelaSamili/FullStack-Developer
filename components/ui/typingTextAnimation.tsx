@@ -44,6 +44,7 @@ export function TypingAnimation({
       startTyping();
       return;
     }
+    setDisplayedText('');
 
     const observer = new IntersectionObserver(
       ([entry]) => {

@@ -5,9 +5,9 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative container flex justify-start items-center h-dvh"
+      className="relative bg-slate-400 container flex justify-start items-center h-dvh"
     >
-      <div className="relative text-justify h-[50%] w-full ">
+      <div className="relative text-justify h-[50%] w-full bg-slate-500 ">
         <div className="text-white text-lg font-Cutive-Mono font-bold">
           Hi! Dare!
         </div>
