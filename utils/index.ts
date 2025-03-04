@@ -54,3 +54,46 @@ export const projects = [
     link: 'https://github.com/MarcelaSamili/SubsTrack',
   },
 ];
+
+export const socialMedia = [
+  {
+    id: 1,
+    name: 'Gmail',
+    Gmailhref:
+      'https://mail.google.com/mail/?view=cm&fs=1&to=marcela.barroso10.s@gmail.com',
+    target: '_blank',
+  },
+  {
+    id: 2,
+    name: 'WhatsApp',
+    Whatshref: 'https://wa.me/5516996350255',
+    target: '_blank',
+  },
+  {
+    id: 3,
+    name: 'Instagram',
+    href: 'https://www.instagram.com/marcelasamili/',
+    target: '_blank',
+  },
+  {
+    id: 4,
+    name: 'GitHub',
+    href: 'https://github.com/MarcelaSamili',
+    target: '_blank',
+  },
+  {
+    id: 5,
+    name: 'Linkedin',
+    href: 'https://www.linkedin.com/in/marcela-samili-999919197/',
+    target: '_blank',
+  },
+];
+
+export const socials = {
+  gmail:
+    'https://mail.google.com/mail/?view=cm&fs=1&to=marcela.barroso10.s@gmail.com',
+  Whatsapp: 'https://wa.me/5516996350255',
+  instagram: 'https://www.instagram.com/marcelasamili/',
+  github: 'https://github.com/MarcelaSamili',
+  linkedin: 'https://www.linkedin.com/in/marcela-samili-999919197/',
+};

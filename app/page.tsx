@@ -1,17 +1,22 @@
 'use client';
+import '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
 import { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import About from '@/components/About';
 import Hero from '@/components/Hero';
 import Skils from '@/components/Skils';
 import Projects from '@/components/Projects';
+import ContactMe from '@/components/ContactMe';
 import { motion } from 'motion/react';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
 import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ContactMe from '@/components/Manssage';
+import { Theme } from '@radix-ui/themes';
+import Footer from '@/components/Footer';
+import Head from 'next/head';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,26 +58,30 @@ export default function Home() {
   }, [isClient]);
   return (
     //<FollowerPointerCard>
-    <main className="relative bg-bg_primary ">
-      <Navigation />
-      <div className="relative justify-center items-center ml-10 mr-10 ">
-        <motion.div>
-          <Hero />
-        </motion.div>
-        <motion.div>
-          <About />
-        </motion.div>
-        <motion.div>
-          <Skils />
-        </motion.div>
-        <motion.div>
-          <Projects />
-        </motion.div>
-        <motion.div>
-          <ContactMe />
-        </motion.div>
-      </div>
-    </main>
+
+    <Theme>
+      <main className="relative bg-bg_primary ">
+        <Navigation />
+        <div className="relative justify-center items-center ml-10 mr-10 ">
+          <motion.div>
+            <Hero />
+          </motion.div>
+          <motion.div>
+            <About />
+          </motion.div>
+          <motion.div>
+            <Skils />
+          </motion.div>
+          <motion.div>
+            <Projects />
+          </motion.div>
+          <motion.div>
+            <ContactMe />
+          </motion.div>
+          <Footer />
+        </div>
+      </main>
+    </Theme>
     //</FollowerPointerCard>
   );
 }

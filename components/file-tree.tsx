@@ -1,5 +1,5 @@
 'use client';
-import '@radix-ui/themes/styles.css';
+
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { FileIcon, FolderIcon, FolderOpenIcon } from 'lucide-react';
 import React, {
@@ -12,8 +12,7 @@ import React, {
 } from 'react';
 
 import { cn } from '@/lib/utils';
-import { ScrollArea } from '@radix-ui/react-scroll-area';
-import { Button } from '@radix-ui/themes/components/button';
+import { Button, ScrollArea } from '@radix-ui/themes';
 
 type TreeViewElement = {
   id: string;
@@ -368,9 +367,7 @@ const CollapseButton = forwardRef<
 
   return (
     <button
-      //color="indigo"
-      //variant={'classic'}
-      className="absolute bottom-1 right-2 h-8 w-fit p-1"
+      className=""
       onClick={
         expandedItems && expandedItems.length > 0
           ? closeAll

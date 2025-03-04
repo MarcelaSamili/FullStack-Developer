@@ -23,7 +23,7 @@ const Skils = () => {
           <AnimatedSpan delay={2000} className="text-blue-300">
             <span>
               ✔ Skills Loaded:
-              <br /> - Arquitetura de Software,
+              <br /> - Software Architecture,
               <br /> - JavaScript, TypeScript,
               <br /> - ReactJS, Next.js, Node.js,
               <br /> - TailwindCSS, HTML/CSS,

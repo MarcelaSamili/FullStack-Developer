@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
-import { Theme } from '@radix-ui/themes';
 import { Geist, Geist_Mono } from 'next/font/google';
-import '@radix-ui/themes/styles.css';
 import './globals.css';
 
 const geistSans = Geist({
@@ -17,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Marcela Samili',
   description: 'This is my portifoil',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -26,13 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Theme>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          {children}
-        </body>
-      </Theme>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

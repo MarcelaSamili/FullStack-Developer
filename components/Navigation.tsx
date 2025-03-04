@@ -72,7 +72,7 @@ const Navigation = () => {
                       e.preventDefault();
                       scrollToSection(item.link.replace('#', ''));
                     }}
-                    className="bg-bg_secondary font-Cutive-Mono cursor-pointer p-3 py-2 rounded-full transition dalay-150 duration-300 ease-in-out hover:bg-bg_primary hover:-translate-y-1 hover:scale-110 "
+                    className="bg-bg_secondary font-Cutive-Mono cursor-pointer p-3 py-2 rounded-full transition dalay-150 duration-300 ease-in-out hover:bg-slate-400 hover:translate-y-[2px] hover:scale-110 "
                   ></button>
                 </motion.div>
               </li>
