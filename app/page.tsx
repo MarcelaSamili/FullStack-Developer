@@ -1,6 +1,5 @@
 'use client';
 import '@radix-ui/themes';
-import '@radix-ui/themes/styles.css';
 import { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import About from '@/components/About';
@@ -16,7 +15,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Theme } from '@radix-ui/themes';
 import Footer from '@/components/Footer';
-import Head from 'next/head';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,8 +55,6 @@ export default function Home() {
     }
   }, [isClient]);
   return (
-    //<FollowerPointerCard>
-
     <Theme>
       <main className="relative bg-bg_primary ">
         <Navigation />
@@ -82,6 +78,5 @@ export default function Home() {
         </div>
       </main>
     </Theme>
-    //</FollowerPointerCard>
   );
 }

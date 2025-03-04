@@ -9,7 +9,7 @@ const About = () => {
     >
       <div className="relative text-justify h-[30%] w-full ">
         <div className="text-white text-lg font-Cutive-Mono font-bold">
-          hello visitor!
+          Hello visitor!
         </div>
         <div>
           <TypingAnimation className="text-white text-lg font-Cutive-Mono font-medium">
