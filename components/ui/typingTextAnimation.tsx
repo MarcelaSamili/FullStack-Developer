@@ -31,7 +31,6 @@ export function TypingAnimation({
   const elementRef = useRef<HTMLElement | null>(null);
 
   const startTyping = useCallback(() => {
-    setDisplayedText(''); // Resetar texto antes de reiniciar animação
     setStarted(false);
 
     setTimeout(() => {
@@ -52,7 +51,7 @@ export function TypingAnimation({
           startTyping();
         }
       },
-      { threshold: 0.5 } // Define quando ativar (50% visível na tela)
+      { threshold: 1 } // Define quando ativar (80% visível na tela)
     );
 
     if (elementRef.current) {

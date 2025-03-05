@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="relative flex justify-between p-5  w-full border-t-[1px] border-bg_secondary">
       <div className="relatice flex  font-Cutive-Mono text-white">
-        <p>All Rights Reserved Copyrigth</p>
+        <p>All Rights Reserved Copyright</p>
         <FaRegCopyright />
       </div>
       <div className="relative flex gap-5  text-white text-xl">
