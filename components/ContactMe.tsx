@@ -1,5 +1,6 @@
 import { File, Folder, Tree } from '@/components/ui/file-tree';
 import { socials } from '@/utils/index';
+import { contactme_elements } from '@/utils/index';
 const ContactMe = () => {
   return (
     <section
@@ -24,7 +25,7 @@ const ContactMe = () => {
             '11',
             '12',
           ]}
-          elements={ELEMENTS}
+          elements={contactme_elements}
         >
           <Folder element="src" value="1">
             <Folder value="2" element="app">
@@ -73,58 +74,3 @@ const ContactMe = () => {
   );
 };
 export default ContactMe;
-const ELEMENTS = [
-  {
-    id: '1',
-    isSelectable: true,
-    name: 'src',
-    children: [
-      {
-        id: '2',
-        isSelectable: true,
-        name: 'app',
-        children: [
-          {
-            id: '3',
-            isSelectable: true,
-            name: 'layout.tsx',
-          },
-          {
-            id: '4',
-            isSelectable: true,
-            name: 'page.tsx',
-          },
-        ],
-      },
-      {
-        id: '5',
-        isSelectable: true,
-        name: 'components',
-        children: [
-          {
-            id: '6',
-            isSelectable: true,
-            name: 'header.tsx',
-          },
-          {
-            id: '7',
-            isSelectable: true,
-            name: 'footer.tsx',
-          },
-        ],
-      },
-      {
-        id: '8',
-        isSelectable: true,
-        name: 'lib',
-        children: [
-          {
-            id: '9',
-            isSelectable: true,
-            name: 'utils.ts',
-          },
-        ],
-      },
-    ],
-  },
-];

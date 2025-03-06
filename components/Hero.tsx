@@ -7,10 +7,7 @@ const Hero = () => {
 
       <div className="relative container flex flex-col justify-center items-center h-dvh">
         <div className="relative justify-between w-full flex flex-wrap lg:flex-nowrap xl:flex-nowrap ">
-          <div
-            className="relative p-2 h-full text-4xl   
-        font-Cutive-Mono"
-          >
+          <div className="relative p-2 h-full text-4xl font-Cutive-Mono">
             <p className="text-white">Full-Stark </p>
             <p className="text-text_gray_300">Developer</p>
             <p className="text-white">Júnior</p>

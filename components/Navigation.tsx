@@ -1,6 +1,8 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+
 import { navItems } from '@/utils/index';
+
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
 import { gsap } from 'gsap';

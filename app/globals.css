@@ -19,12 +19,11 @@ main{
 /* Estiliza o fundo da barra de rolagem */
 ::-webkit-scrollbar-track {
   background: #464E52; 
-  border-radius: 5px;
 }
 
 /* Estiliza o indicador (o "thumb") da barra de rolagem */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #6d6d6d; 
   border-radius: 5px;
 }
 
@@ -39,38 +38,7 @@ main{
     font-family: 'Cutive-Mono' ;
     src: url('/font/CutiveMono-Regular.woff2') format('woff2');
   }
-  @font-face {
-    font-family: 'Typo-Thin';
-    src: url('/font/typofont/TypoThin.woff2') format('woff2');
-  } 
-  @font-face {
-    font-family: 'Typo-Regular';
-    src: url('/font/typofont/TypoRegular.woff2') format('woff2');
-  } 
- 
-  @font-face {
-    font-family: 'Typo-Ligth';
-    src: url('/font/typofont/TypoLight.woff2') format('woff2');
-  }
- 
-  @font-face {
-    font-family: 'Typo-Bold';
-    src: url('/font/typofont/TypoBold.woff2') format('woff2');
-  } 
   
-  @font-face {
-    font-family: 'Typo-Italic';
-    src: url('/font/typofont/TypoItalic.woff2') format('woff2');
-  }
-  
-  @font-face {
-    font-family: 'Mine-Bold';
-    src: url('/font/minefont/Minecraft-Bold.woff2') format('woff2');
-  } 
-  @font-face {
-    font-family: 'Small-Type';
-    src: url('/font/typofont/SmallTypeWriting.woff2') format('woff2');
-  }
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -190,15 +158,3 @@ main{
   
 };
 
-
-;
-
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
