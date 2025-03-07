@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Marcela Samili',
-  description: 'This is my portifoil',
+  title: 'Marcela Samili - Full Stack Developer',
+  description:
+    'I am a Full Stack Developer specialized in React, Node.js, NextJs and Software Development. Check out my projects!',
   icons: {
     icon: '/favicon.ico',
   },

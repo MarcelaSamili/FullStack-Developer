@@ -8,14 +8,14 @@ const Hero = () => {
       <div className="relative container flex flex-col justify-center items-center h-dvh">
         <div className="relative justify-between w-full flex flex-wrap lg:flex-nowrap xl:flex-nowrap ">
           <div className="relative p-2 h-full text-4xl font-Cutive-Mono">
-            <p className="text-white">Full-Stark </p>
-            <p className="text-text_gray_300">Developer</p>
-            <p className="text-white">Júnior</p>
+            <h1 className="text-white">Full-Stark </h1>
+            <h1 className="text-text_gray_300">Developer</h1>
+            <h1 className="text-white">Júnior</h1>
           </div>
 
           <div className="p-2 text-4xl sm:text-3xl font-Cutive-Mono">
-            <p className="text-text_gray_300">Marcela</p>
-            <p className="text-white">Barroso</p>
+            <h1 className="text-text_gray_300">Marcela</h1>
+            <h1 className="text-white">Barroso</h1>
           </div>
         </div>
       </div>
