@@ -21,43 +21,35 @@ import Footer from '@/components/Footer';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const [isClient, setIsClient] = useState(false);
-
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsClient(true);
-    }
-  }, []);
+    if (typeof window === 'undefined') return; // Evita executar no servidor
 
-  useEffect(() => {
-    if (isClient) {
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        gestureOrientation: 'vertical',
-        wheelMultiplier: 1,
-        touchMultiplier: 2,
-        infinite: false,
-      });
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      gestureOrientation: 'vertical',
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      infinite: false,
+    });
 
-      lenis.on('scroll', ScrollTrigger.update);
+    lenis.on('scroll', ScrollTrigger.update);
 
-      function raf(time: number) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
+    function raf(time: number) {
+      lenis.raf(time);
       requestAnimationFrame(raf);
-
-      gsap.ticker.add(time => lenis.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
-
-      return () => {
-        gsap.ticker.remove(time => lenis.raf(time * 1000));
-      };
     }
-  }, [isClient]);
+    requestAnimationFrame(raf);
+
+    gsap.ticker.add(time => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove(time => lenis.raf(time * 1000));
+    };
+  }, []); // Sem dependências, executa apenas no cliente após o primeiro render
   return (
-    <main className="relative bg-bg_primary ">
+    <main className="relative bg-bg_primary overflow-hidden lg:overflow-visible xl:overflow-visible ">
       <Navigation />
       <div className="relative justify-center items-center ml-10 mr-10 ">
         <Hero />

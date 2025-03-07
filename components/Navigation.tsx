@@ -12,51 +12,43 @@ import { motion } from 'motion/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const Navigation = () => {
-  const [isClient, setIsClient] = useState(false);
   const [lenis, setLenis] = useState<Lenis | null>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsClient(true);
-    }
-  }, []);
+    if (typeof window === 'undefined') return; // Garante execução apenas no cliente
 
-  useEffect(() => {
-    if (isClient) {
-      const lenisInstance = new Lenis({
-        duration: 1.2,
-        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        gestureOrientation: 'vertical',
-        wheelMultiplier: 1,
-        touchMultiplier: 2,
-        infinite: false,
-      });
+    const lenisInstance = new Lenis({
+      duration: 1.2,
+      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      gestureOrientation: 'vertical',
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      infinite: false,
+    });
 
-      setLenis(lenisInstance);
+    setLenis(lenisInstance);
 
-      lenisInstance.on('scroll', ScrollTrigger.update);
+    lenisInstance.on('scroll', ScrollTrigger.update);
 
-      function raf(time: number) {
-        lenisInstance.raf(time);
-        requestAnimationFrame(raf);
-      }
+    function raf(time: number) {
+      lenisInstance.raf(time);
       requestAnimationFrame(raf);
-
-      gsap.ticker.add(time => lenisInstance.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
-
-      return () => {
-        gsap.ticker.remove(time => lenisInstance.raf(time * 1000));
-      };
     }
-  }, [isClient]);
+    requestAnimationFrame(raf);
+
+    gsap.ticker.add(time => lenisInstance.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove(time => lenisInstance.raf(time * 1000));
+    };
+  }, []);
 
   const scrollToSection = (id: string) => {
     if (lenis) {
       const section = document.getElementById(id);
       if (section) {
-        const offsetTop = section.offsetTop;
-        lenis.scrollTo(offsetTop);
+        lenis.scrollTo(section.offsetTop);
       }
     }
   };

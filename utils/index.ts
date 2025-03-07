@@ -11,7 +11,7 @@ export const projects = [
     id: 1,
     title: 'WebSite Enlace Technology',
     description:
-      'An Enterprise Website built using Next.js, React.js, Tailwind CSS, AcertenityUI, Motion, MagicUI, and GSAP.',
+      'Builded using Next.js, React.js, Tailwind CSS, AcertenityUI, Motion, MagicUI, and GSAP.',
     img: '/img/01.png',
     link: 'https://github.com/MarcelaSamili',
   },
