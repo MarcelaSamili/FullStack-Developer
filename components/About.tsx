@@ -1,5 +1,6 @@
 import React from 'react';
 import { TypingAnimation } from './ui/typingTextAnimation';
+import { text_about } from '@/utils';
 
 const About = () => {
   return (
@@ -13,12 +14,7 @@ const About = () => {
         </div>
         <div>
           <TypingAnimation className="text-white text-lg font-Cutive-Mono font-medium">
-            My Name is Marcela Barroso, I'm a Full-Stark Developer Based in
-            Ribeirão Preto, São Paulo, Brazil.I have a postgraduate degree in
-            Full-Stark and Full-Cycle Development from XP Educação University
-            and have been working on a wide range of full-stark projects,
-            focusing on creating clean, well-designed interfaces that not only
-            look great, but also provide a seamless user experience.
+            {text_about}
           </TypingAnimation>
         </div>
       </div>
