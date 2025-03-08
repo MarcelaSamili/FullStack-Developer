@@ -36,7 +36,7 @@ const Navigation = () => {
     }
     requestAnimationFrame(raf);
 
-    gsap.ticker.add(time => lenisInstance.raf(time * 1000));
+    gsap.ticker.add(time => lenisInstance.raf(time * 0.5));
     gsap.ticker.lagSmoothing(500);
 
     return () => {
