@@ -28,7 +28,7 @@ const Navigation = () => {
 
     setLenis(lenisInstance);
 
-    lenisInstance.on('scroll', ScrollTrigger.update);
+    //lenisInstance.on('scroll', ScrollTrigger.update);
 
     function raf(time: number) {
       lenisInstance.raf(time);
@@ -37,7 +37,7 @@ const Navigation = () => {
     requestAnimationFrame(raf);
 
     gsap.ticker.add(time => lenisInstance.raf(time * 1000));
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.lagSmoothing(500);
 
     return () => {
       gsap.ticker.remove(time => lenisInstance.raf(time * 1000));
@@ -48,7 +48,7 @@ const Navigation = () => {
     if (lenis) {
       const section = document.getElementById(id);
       if (section) {
-        lenis.scrollTo(section.offsetTop);
+        lenis.scrollTo(section, { offset: -50 });
       }
     }
   };
@@ -66,7 +66,7 @@ const Navigation = () => {
                       e.preventDefault();
                       scrollToSection(item.link.replace('#', ''));
                     }}
-                    className="bg-bg_secondary font-Cutive-Mono cursor-pointer p-3 py-2 rounded-full transition dalay-150 duration-300 ease-in-out hover:bg-slate-400 hover:translate-y-[2px] hover:scale-110 "
+                    className="bg-bg_secondary font-Cutive-Mono cursor-pointer p-3 py-2 rounded-full transition dalay-150 duration-300 ease-in-out hover:bg-slate-400  "
                   ></button>
                 </motion.div>
               </li>

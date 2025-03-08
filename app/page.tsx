@@ -8,6 +8,7 @@ import Hero from '@/components/Hero';
 import Skils from '@/components/Skils';
 import Projects from '@/components/Projects';
 import ContactMe from '@/components/ContactMe';
+import Footer from '@/components/Footer';
 
 //-----------------------
 import Lenis from 'lenis';
@@ -15,8 +16,6 @@ import 'lenis/dist/lenis.css';
 import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-import Footer from '@/components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,7 +32,7 @@ export default function Home() {
       infinite: false,
     });
 
-    lenis.on('scroll', ScrollTrigger.update);
+    //lenis.on('scroll', ScrollTrigger.update);
 
     function raf(time: number) {
       lenis.raf(time);
