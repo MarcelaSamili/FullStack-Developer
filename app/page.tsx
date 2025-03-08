@@ -1,6 +1,6 @@
 'use client';
 import '@radix-ui/themes';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 //----------------------
 import Navigation from '@/components/Navigation';
 import About from '@/components/About';
@@ -8,7 +8,7 @@ import Hero from '@/components/Hero';
 import Skils from '@/components/Skils';
 import Projects from '@/components/Projects';
 import ContactMe from '@/components/ContactMe';
-import { motion } from 'motion/react';
+
 //-----------------------
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';

@@ -153,3 +153,6 @@ export const contactme_elements = [
     ],
   },
 ];
+
+export const text_about =
+  'My Name is Marcela Barroso, I am a Full-Stark Developer Based in Ribeirão Preto, São Paulo, Brazil.I have a postgraduate degree in Full-Stark and Full-Cycle Development from XP Educação University and have been working on a wide range of full-stark projects, focusing on creating clean, well-designed interfaces that not only look great, but also provide a seamless user experience.';
