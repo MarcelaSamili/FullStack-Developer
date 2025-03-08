@@ -9,11 +9,10 @@ import { socials } from '@/utils';
 const Footer = () => {
   return (
     <footer className="relative flex justify-between p-5  w-full border-t-[1px] border-bg_secondary">
-      <div className="relatice flex  font-Cutive-Mono text-white">
+      <div className="relative flex font-Cutive-Mono text-white">
         <p>All Rights Reserved Copyright</p>
-        <FaRegCopyright />
       </div>
-      <div className="relative flex gap-5  text-white text-xl">
+      <div className="relative flex flex-wrap gap-4  text-white text-xl">
         <a href={socials.gmail} target="_blank">
           <SiGmail />
         </a>

@@ -6,14 +6,14 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative container flex justify-start items-center h-dvh"
+      className="relative container flex justify-center items-center h-dvh"
     >
-      <div className="relative text-justify h-[30%] w-full ">
-        <div className="text-white text-lg font-Cutive-Mono font-bold">
+      <div className="relative text-justify w-full ">
+        <div className="text-white text-base md:text-lg lg:text-lg font-Cutive-Mono font-bold">
           Hello visitor!
         </div>
         <div>
-          <TypingAnimation className="text-white text-lg font-Cutive-Mono font-medium">
+          <TypingAnimation className="text-white text-lg md:text-xl lg:text-xl font-Cutive-Mono font-medium">
             {text_about}
           </TypingAnimation>
         </div>

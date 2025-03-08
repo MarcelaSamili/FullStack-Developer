@@ -4,13 +4,7 @@
 @tailwind utilities;
 
 
-body{
-  scroll-behavior: smooth;
-}
 
-main{
-  scroll-behavior: smooth;
-}
 /* Define a largura da barra de rolagem */
 ::-webkit-scrollbar {
   width: 10px;
@@ -30,6 +24,11 @@ main{
 /* Quando o usuário passa o mouse sobre a barra */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+
+button, a {
+  outline: none;
+  touch-action: manipulation; /* Evita recarregamentos acidentais */
 }
 
 
