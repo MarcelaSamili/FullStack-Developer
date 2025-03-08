@@ -1,12 +1,13 @@
-import type { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
-  output: 'export',
-  basePath: '/FullStack-Developer', // Substitua pelo nome do seu repositório
-  images: { unoptimized: true },
+//** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export', // Permite gerar arquivos estáticos
+  images: {
+    unoptimized: true, // Necessário para exportação estática
+  },
+  basePath: '/Marcela-Samili-Desenvolvedor', // Use o nome do repositório
   eslint: {
     ignoreDuringBuilds: true,
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
