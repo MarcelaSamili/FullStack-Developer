@@ -4,7 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // Necessário para exportação estática
   },
-  basePath: '/Marcela-Samili-Desenvolvedor', // Use o nome do repositório
+  basePath: '/FullStack-Developer', // Use o nome do repositório
+  assetPresfix: '/FullStack-Developer',
   eslint: {
     ignoreDuringBuilds: true,
   },
