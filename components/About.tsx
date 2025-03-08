@@ -8,7 +8,7 @@ const About = () => {
       id="about"
       className="relative container flex justify-center items-center h-dvh"
     >
-      <div className="relative text-justify w-full ">
+      <div className="relative text-justify w-full h-[25%] ">
         <div className="text-white text-base md:text-lg lg:text-lg font-Cutive-Mono font-bold">
           Hello visitor!
         </div>

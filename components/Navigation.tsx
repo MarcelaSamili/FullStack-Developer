@@ -56,17 +56,17 @@ const Navigation = () => {
   return (
     <div className="fixed flex justify-center items-center">
       <nav className="fixed top-[20%] left-0 border-2 backdrop-blur-md p-4 shadow-lg z-50 rounded-[50px] rounded-es-2xl">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-">
           <ul>
             {navItems.map((item, index) => (
               <li key={index}>
-                <motion.div>
+                <motion.div className="py-1">
                   <button
                     onClick={e => {
                       e.preventDefault();
                       scrollToSection(item.link.replace('#', ''));
                     }}
-                    className="bg-bg_secondary font-Cutive-Mono cursor-pointer p-3 py-2 rounded-full transition dalay-150 duration-300 ease-in-out hover:bg-slate-400  "
+                    className="bg-bg_secondary text-xs font-Cutive-Mono cursor-pointer p-3 py-2 rounded-full "
                   ></button>
                 </motion.div>
               </li>
