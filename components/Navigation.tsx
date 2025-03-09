@@ -12,7 +12,7 @@ import { motion } from 'motion/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const Navigation = () => {
-  const [lenis, setLenis] = useState<Lenis | null>(null);
+  /*const [lenis, setLenis] = useState<Lenis | null>(null);
 
   useEffect(() => {
     if (typeof window === 'undefined') return; // Garante execução apenas no cliente
@@ -51,7 +51,7 @@ const Navigation = () => {
         lenis.scrollTo(section, { offset: -30 });
       }
     }
-  };
+  };*/
 
   return (
     <div className="fixed flex justify-center items-center">
@@ -65,7 +65,8 @@ const Navigation = () => {
                     <button
                       onClick={e => {
                         e.preventDefault();
-                        scrollToSection(item.link.replace('#', ''));
+                        item.link;
+                        /*scrollToSection(item.link.replace('#', ''));*/
                       }}
                       className="bg-bg_secondary text-xs font-Cutive-Mono cursor-pointer p-3 py-2 rounded-full "
                     ></button>

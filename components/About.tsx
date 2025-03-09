@@ -8,13 +8,9 @@ const About = () => {
       id="about"
       className="relative container flex justify-center items-center h-dvh"
     >
-      <div className="relative w-full ">
-        <p className="text-white text-lg font-Cutive-Mono font-bold text-start w-full ">
-          Hello visitor!
-        </p>
-        <p className="text-white text-lg text-justify font-Cutive-Mono font-medium ">
-          {text_about}
-        </p>
+      <div className="relative w-full text-white text-lg lg:text-2xl font-Cutive-Mono text-justify">
+        <p className=" font-bold  ">Hello visitor!</p>
+        <p className="font-medium ">{text_about}</p>
       </div>
     </section>
   );
