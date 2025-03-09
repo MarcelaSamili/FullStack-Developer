@@ -13,17 +13,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Navigation = () => {
   const [lenis, setLenis] = useState<Lenis | null>(null);
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Detecta se é desktop
-    const checkIsDesktop = () => window.innerWidth >= 1024;
-    setIsDesktop(checkIsDesktop());
+    // Verifica se a tela é menor que 1024px (ajuste conforme necessário)
+    const checkIsMobile = () => window.innerWidth < 1024;
+    setIsMobile(checkIsMobile());
 
-    if (checkIsDesktop()) {
-      const lenisInstance = new Lenis({
+    if (!checkIsMobile()) {
+      const lenis = new Lenis({
         duration: 1.2,
         easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         gestureOrientation: 'vertical',
@@ -31,38 +31,30 @@ const Navigation = () => {
         touchMultiplier: 2,
         infinite: false,
       });
+      setLenis(lenis);
 
-      setLenis(lenisInstance);
-
-      lenisInstance.on('scroll', ScrollTrigger.update);
+      lenis.on('scroll', ScrollTrigger.update);
 
       function raf(time: number) {
-        lenisInstance.raf(time);
+        lenis.raf(time);
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
 
-      gsap.ticker.add(time => lenisInstance.raf(time * 1000));
+      gsap.ticker.add(time => lenis.raf(time * 1000));
       gsap.ticker.lagSmoothing(0);
 
       return () => {
-        gsap.ticker.remove(time => lenisInstance.raf(time * 1000));
+        gsap.ticker.remove(time => lenis.raf(time * 1000));
       };
     }
   }, []);
 
   const scrollToSection = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      if (isDesktop && lenis) {
-        // No Desktop, usa Lenis para rolar suavemente
+    if (lenis) {
+      const section = document.getElementById(id);
+      if (section) {
         lenis.scrollTo(section, { offset: -30 });
-      } else {
-        // No Mobile, usa scroll nativo suave
-        window.scrollTo({
-          top: section.offsetTop - 30,
-          behavior: 'smooth',
-        });
       }
     }
   };
