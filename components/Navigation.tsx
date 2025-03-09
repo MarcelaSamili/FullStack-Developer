@@ -15,20 +15,14 @@ const Navigation = () => {
   const [lenis, setLenis] = useState<Lenis | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
 
-  // Verificação de dispositivos desktop (reage à mudança de tamanho da tela)
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    // Detecta se é desktop
     const checkIsDesktop = () => window.innerWidth >= 1024;
-    const handleResize = () => setIsDesktop(checkIsDesktop());
+    setIsDesktop(checkIsDesktop());
 
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Verifica logo ao carregar
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Inicialização do Lenis quando necessário (apenas para desktop)
-  useEffect(() => {
-    if (isDesktop && !lenis) {
+    if (checkIsDesktop()) {
       const lenisInstance = new Lenis({
         duration: 1.2,
         easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -55,21 +49,21 @@ const Navigation = () => {
         gsap.ticker.remove(time => lenisInstance.raf(time * 1000));
       };
     }
-  }, [isDesktop, lenis]);
+  }, []);
 
-  // Função para rolar suavemente para a seção
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
-
-    if (section && lenis) {
-      // Usar Lenis para rolar suavemente
-      lenis.scrollTo(section, { offset: -30 });
-    } else if (section) {
-      // Caso o Lenis não esteja inicializado, rolar com o comportamento nativo
-      window.scrollTo({
-        top: section.offsetTop - 30,
-        behavior: 'smooth',
-      });
+    if (section) {
+      if (isDesktop && lenis) {
+        // No Desktop, usa Lenis para rolar suavemente
+        lenis.scrollTo(section, { offset: -30 });
+      } else {
+        // No Mobile, usa scroll nativo suave
+        window.scrollTo({
+          top: section.offsetTop - 30,
+          behavior: 'smooth',
+        });
+      }
     }
   };
 
