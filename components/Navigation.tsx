@@ -12,46 +12,60 @@ import { motion } from 'motion/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const Navigation = () => {
-  /*const [lenis, setLenis] = useState<Lenis | null>(null);
+  const [lenis, setLenis] = useState<Lenis | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return; // Garante execução apenas no cliente
+    if (typeof window === 'undefined') return;
 
-    const lenisInstance = new Lenis({
-      duration: 1.2,
-      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      gestureOrientation: 'vertical',
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
-      infinite: false,
-    });
+    // Detecta se é desktop
+    const checkIsDesktop = () => window.innerWidth >= 1024;
+    setIsDesktop(checkIsDesktop());
 
-    setLenis(lenisInstance);
+    if (checkIsDesktop()) {
+      const lenisInstance = new Lenis({
+        duration: 1.2,
+        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        gestureOrientation: 'vertical',
+        wheelMultiplier: 1,
+        touchMultiplier: 2,
+        infinite: false,
+      });
 
-    lenisInstance.on('scroll', ScrollTrigger.update);
+      setLenis(lenisInstance);
 
-    function raf(time: number) {
-      lenisInstance.raf(time);
+      lenisInstance.on('scroll', ScrollTrigger.update);
+
+      function raf(time: number) {
+        lenisInstance.raf(time);
+        requestAnimationFrame(raf);
+      }
       requestAnimationFrame(raf);
+
+      gsap.ticker.add(time => lenisInstance.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+
+      return () => {
+        gsap.ticker.remove(time => lenisInstance.raf(time * 1000));
+      };
     }
-    requestAnimationFrame(raf);
-
-    gsap.ticker.add(time => lenisInstance.raf(time * 0.5));
-    gsap.ticker.lagSmoothing(500);
-
-    return () => {
-      gsap.ticker.remove(time => lenisInstance.raf(time * 1000));
-    };
   }, []);
 
   const scrollToSection = (id: string) => {
-    if (lenis) {
-      const section = document.getElementById(id);
-      if (section) {
+    const section = document.getElementById(id);
+    if (section) {
+      if (isDesktop && lenis) {
+        // No Desktop, usa Lenis para rolar suavemente
         lenis.scrollTo(section, { offset: -30 });
+      } else {
+        // No Mobile, usa scroll nativo suave
+        window.scrollTo({
+          top: section.offsetTop - 30,
+          behavior: 'smooth',
+        });
       }
     }
-  };*/
+  };
 
   return (
     <div className="fixed flex justify-center items-center">
@@ -66,7 +80,7 @@ const Navigation = () => {
                       onClick={e => {
                         e.preventDefault();
                         item.link;
-                        /*scrollToSection(item.link.replace('#', ''));*/
+                        scrollToSection(item.link.replace('#', ''));
                       }}
                       className="bg-bg_secondary text-xs font-Cutive-Mono cursor-pointer p-3 py-2 rounded-full "
                     ></button>
