@@ -10,7 +10,7 @@ const Skils = () => {
   return (
     <section
       id="skills"
-      className="relative flex justify-center items-center overflow-hidden m-full h-dvh"
+      className="relative flex justify-center items-center overflow-hidden h-dvh "
     >
       <div className="relative container h-full flex justify-center items-center overflow-hidden">
         <Terminal className="overflow-hidden">
