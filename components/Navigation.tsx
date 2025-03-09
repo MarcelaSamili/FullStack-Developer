@@ -13,60 +13,47 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Navigation = () => {
   const [lenis, setLenis] = useState<Lenis | null>(null);
-  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined') return; // Garantir execução apenas no cliente
 
-    // Detecta se é desktop
-    const checkIsDesktop = () => window.innerWidth >= 1024;
-    setIsDesktop(checkIsDesktop());
-
-    if (checkIsDesktop()) {
-      const lenisInstance = new Lenis({
-        duration: 1.2,
-        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        gestureOrientation: 'vertical',
-        wheelMultiplier: 1,
-        touchMultiplier: 2,
-        infinite: false,
-      });
-
-      setLenis(lenisInstance);
-
-      lenisInstance.on('scroll', ScrollTrigger.update);
-
-      function raf(time: number) {
-        lenisInstance.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-
-      gsap.ticker.add(time => lenisInstance.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
-
-      return () => {
-        gsap.ticker.remove(time => lenisInstance.raf(time * 1000));
-      };
-    }
+    // Não inicializamos o Lenis ainda. Vamos inicializá-lo quando necessário.
   }, []);
 
+  // Função para rolar suavemente para a seção
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
+
     if (section) {
-      if (isDesktop && lenis) {
-        // No Desktop, usa Lenis para rolar suavemente
-        lenis.scrollTo(section, { offset: -30 });
-      } else {
-        // No Mobile, usa scroll nativo suave
-        window.scrollTo({
-          top: section.offsetTop - 30,
-          behavior: 'smooth',
+      // Inicializa o Lenis quando for necessário (ao clicar no link)
+      if (!lenis) {
+        const lenisInstance = new Lenis({
+          duration: 1.2,
+          easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          gestureOrientation: 'vertical',
+          wheelMultiplier: 1,
+          touchMultiplier: 2,
+          infinite: false,
         });
+
+        setLenis(lenisInstance);
+
+        lenisInstance.on('scroll', ScrollTrigger.update);
+
+        function raf(time: number) {
+          lenisInstance.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        gsap.ticker.add(time => lenisInstance.raf(time * 1000));
+        gsap.ticker.lagSmoothing(0);
       }
+
+      // Usar Lenis para rolar suavemente
+      lenis?.scrollTo(section, { offset: -30 });
     }
   };
-
   return (
     <div className="fixed flex justify-center items-center">
       <nav className="fixed top-[20%] left-0 border-2 backdrop-blur-md p-4 shadow-lg z-50 rounded-[50px] rounded-es-2xl">
