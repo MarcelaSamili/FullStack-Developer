@@ -105,4 +105,26 @@ button, a {
 };
 
 
-
+@layer components {
+  
+  .navigation {
+    display:none;
+  }
+  
+  @media (min-width: 768px ) {
+    .navigation {
+      display: block;
+    }
+  }
+  
+  @media (min-width: 1024px ) {
+      .navigation {
+        display: block;
+      }
+  }
+  @media (min-width: 1280px ) {
+    .navigation {
+      display: block;
+    }
+  }
+}
