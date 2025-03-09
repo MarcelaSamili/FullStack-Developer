@@ -8,15 +8,13 @@ const About = () => {
       id="about"
       className="relative container flex justify-center items-center h-dvh"
     >
-      <div className="relative text-justify w-full bg-slate-400 pb-7">
-        <div className="text-white text-lg font-Cutive-Mono font-bold">
+      <div className="relative w-full h-[50%]">
+        <p className="text-white text-lg font-Cutive-Mono font-bold text-start w-full ">
           Hello visitor!
-        </div>
-        <div>
-          <TypingAnimation className="text-white text-lg  font-Cutive-Mono font-medium">
-            {text_about}
-          </TypingAnimation>
-        </div>
+        </p>
+        <TypingAnimation className="text-white text-lg text-justify font-Cutive-Mono font-medium ">
+          {text_about}
+        </TypingAnimation>
       </div>
     </section>
   );
