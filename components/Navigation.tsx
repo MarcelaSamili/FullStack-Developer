@@ -48,7 +48,7 @@ const Navigation = () => {
     if (lenis) {
       const section = document.getElementById(id);
       if (section) {
-        lenis.scrollTo(section, { offset: -50 });
+        lenis.scrollTo(section, { offset: -30 });
       }
     }
   };
@@ -57,21 +57,23 @@ const Navigation = () => {
     <div className="fixed flex justify-center items-center">
       <nav className="fixed top-[20%] left-0 border-2 backdrop-blur-md p-4 shadow-lg z-50 rounded-[50px] rounded-es-2xl">
         <div className="flex justify-between items-">
-          <ul>
-            {navItems.map((item, index) => (
-              <li key={index}>
-                <motion.div className="py-1">
-                  <button
-                    onClick={e => {
-                      e.preventDefault();
-                      scrollToSection(item.link.replace('#', ''));
-                    }}
-                    className="bg-bg_secondary text-xs font-Cutive-Mono cursor-pointer p-3 py-2 rounded-full "
-                  ></button>
-                </motion.div>
-              </li>
-            ))}
-          </ul>
+          <motion.div>
+            <ul>
+              {navItems.map((item, index) => (
+                <li key={index}>
+                  <div className="py-1">
+                    <button
+                      onClick={e => {
+                        e.preventDefault();
+                        scrollToSection(item.link.replace('#', ''));
+                      }}
+                      className="bg-bg_secondary text-xs font-Cutive-Mono cursor-pointer p-3 py-2 rounded-full "
+                    ></button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </nav>
     </div>

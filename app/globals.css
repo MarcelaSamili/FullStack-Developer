@@ -4,6 +4,20 @@
 @tailwind utilities;
 
 
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 100vh;
+}
+
+section {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
 
 /* Define a largura da barra de rolagem */
 ::-webkit-scrollbar {

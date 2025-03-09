@@ -16,6 +16,7 @@ import 'lenis/dist/lenis.css';
 import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { motion } from 'motion/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,8 +41,8 @@ export default function Home() {
     }
     requestAnimationFrame(raf);
 
-    gsap.ticker.add(time => lenis.raf(time * 1000));
-    gsap.ticker.lagSmoothing(0);
+    //gsap.ticker.add(time => lenis.raf(time * 1000));
+    //gsap.ticker.lagSmoothing(0);
 
     return () => {
       gsap.ticker.remove(time => lenis.raf(time * 1000));
@@ -50,7 +51,7 @@ export default function Home() {
   return (
     <main className="relative bg-bg_primary overflow-hidden lg:overflow-visible xl:overflow-visible ">
       <Navigation />
-      <div className="relative justify-center items-center ml-10 mr-10 ">
+      <motion.div className="relative justify-center items-center ml-10 mr-10 ">
         <Hero />
 
         <About />
@@ -62,7 +63,7 @@ export default function Home() {
         <ContactMe />
 
         <Footer />
-      </div>
+      </motion.div>
     </main>
   );
 }
