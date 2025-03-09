@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-dvh overflow-x-hidden">
-      <body className="h-dvh overflow-x-hidden text-xl">{children}</body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }

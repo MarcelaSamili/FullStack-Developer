@@ -17,7 +17,7 @@ import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'motion/react';
-import { useEffect } from 'react';
+//import { useEffect } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,24 +49,8 @@ export default function Home() {
       gsap.ticker.remove(time => lenis.raf(time * 1000));
     };
   }, []); // Sem dependências, executa apenas no cliente após o primeiro render*/
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const updateHeight = () => {
-      document.documentElement.style.setProperty(
-        '--vh',
-        `${window.innerHeight * 0.01}px`
-      );
-    };
-
-    updateHeight(); // Define a altura inicial
-
-    window.addEventListener('resize', updateHeight);
-    return () => window.removeEventListener('resize', updateHeight);
-  }, []);
   return (
-    <motion.main className="relative min-h-dvh overflow-x-hidden bg-bg_primary overflow-hidden lg:overflow-visible xl:overflow-visible p-10">
+    <motion.main className="relative bg-bg_primary">
       <div className="relative justify-center items-center ml-10 mr-10 ">
         <Navigation />
         <Hero />
