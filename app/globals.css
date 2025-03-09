@@ -3,10 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-  height: calc(100dvh - env(safe-area-inset-bottom));
-  overflow-x: hidden;
-}
+
 
 /* Define a largura da barra de rolagem */
 ::-webkit-scrollbar {
@@ -111,11 +108,6 @@ button, a {
     display:none;
   }
   
-  @media (min-width: 768px ) {
-    .navigation {
-      display: block;
-    }
-  }
   
   @media (min-width: 1024px ) {
       .navigation {
