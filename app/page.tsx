@@ -48,6 +48,20 @@ export default function Home() {
       gsap.ticker.remove(time => lenis.raf(time * 1000));
     };
   }, []); // Sem dependências, executa apenas no cliente após o primeiro render
+
+  useEffect(() => {
+    function updateViewportHeight() {
+      document.documentElement.style.setProperty(
+        '--vh',
+        `${window.innerHeight * 0.01}px`
+      );
+    }
+
+    updateViewportHeight();
+    window.addEventListener('resize', updateViewportHeight);
+
+    return () => window.removeEventListener('resize', updateViewportHeight);
+  }, []);
   return (
     <main className="relative bg-bg_primary overflow-hidden lg:overflow-visible xl:overflow-visible ">
       <Navigation />
