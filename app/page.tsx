@@ -10,7 +10,12 @@ import ContactMe from '@/components/ContactMe';
 import Footer from '@/components/Footer';
 
 //-----------------------
+import 'lenis/dist/lenis.css';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'motion/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   return (

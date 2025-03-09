@@ -33,7 +33,7 @@ const Navigation = () => {
         duration: 1.2,
         easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         gestureOrientation: 'vertical',
-        //wheelMultiplier: 0,
+        wheelMultiplier: 1,
         touchMultiplier: 2,
         infinite: false,
       });
