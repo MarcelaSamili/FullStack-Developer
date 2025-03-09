@@ -12,10 +12,10 @@ const Projects = () => {
       id="projects"
       className="relative flex justify-center items-center "
     >
-      <div className="relative container gap-5 p-[30px]   flex flex-wrap justify-center items-center overflow-hidden">
+      <div className="relative container gap-5 p-[30px] flex flex-wrap justify-center items-center overflow-hidden">
         {projects.map(projects => (
           <CardContainer key={projects.id} className="inter-var">
-            <CardBody className="bg-bg_secondary relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+            <CardBody className="relative bg-bg_secondary  group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
               <CardItem
                 translateZ="50"
                 className="text-xl font-bold text-black dark:text-white"
