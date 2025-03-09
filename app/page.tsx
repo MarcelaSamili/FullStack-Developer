@@ -49,23 +49,10 @@ export default function Home() {
     };
   }, []); // Sem dependências, executa apenas no cliente após o primeiro render
 
-  useEffect(() => {
-    function updateViewportHeight() {
-      document.documentElement.style.setProperty(
-        '--vh',
-        `${window.innerHeight * 0.01}px`
-      );
-    }
-
-    updateViewportHeight();
-    window.addEventListener('resize', updateViewportHeight);
-
-    return () => window.removeEventListener('resize', updateViewportHeight);
-  }, []);
   return (
-    <main className="relative bg-bg_primary overflow-hidden lg:overflow-visible xl:overflow-visible ">
-      <Navigation />
-      <motion.div className="relative justify-center items-center ml-10 mr-10 ">
+    <motion.main className="relative bg-bg_primary overflow-hidden lg:overflow-visible xl:overflow-visible ">
+      <div className="relative justify-center items-center ml-10 mr-10 ">
+        <Navigation />
         <Hero />
 
         <About />
@@ -77,7 +64,7 @@ export default function Home() {
         <ContactMe />
 
         <Footer />
-      </motion.div>
-    </main>
+      </div>
+    </motion.main>
   );
 }

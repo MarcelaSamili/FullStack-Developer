@@ -4,22 +4,24 @@
 @tailwind utilities;
 
 html {
-  height: calc(var(--vh) * 100);
-}
-
-body {
   height: 100%;
   overflow-x: hidden;
 }
 
-main {
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+/*main {
   min-height: 100vh;
 }
 
 section {
   min-height: 100vh;
   overflow: hidden;
-}
+}*/
 
 
 /* Define a largura da barra de rolagem */
@@ -169,8 +171,15 @@ button, a {
       max-width: 87.5rem /* 1400px */;
     }
   }  
+  @media (min-width: 600px) {
+    .typing-animation {
+      animation: none !important; /* Remove qualquer animação */
+    }
+  }
     
   
   
 };
+
+
 

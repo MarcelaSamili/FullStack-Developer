@@ -16,7 +16,7 @@ const Skils = () => {
         <Terminal className="overflow-hidden">
           <TypingAnimation>&gt; npm i skills@latest </TypingAnimation>
 
-          <AnimatedSpan delay={1000} className="text-green-400">
+          <AnimatedSpan delay={1000} className="text-green-600">
             <span>✔ Preflight checks.</span>
           </AnimatedSpan>
 
@@ -28,13 +28,13 @@ const Skils = () => {
             <AnimatedSpan
               key={index}
               delay={item.delay}
-              className="text-green-600"
+              className="text-green-400"
             >
               <span>{item.text}</span>
             </AnimatedSpan>
           ))}
 
-          <AnimatedSpan delay={6000} className="text-green-400">
+          <AnimatedSpan delay={6000} className="text-green-600">
             <span>✔ Installing dependencies.</span>
           </AnimatedSpan>
 
