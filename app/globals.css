@@ -3,8 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  height: calc(var(--vh) * 100);
+}
 
-html, body {
+body {
   height: 100%;
   overflow-x: hidden;
 }
