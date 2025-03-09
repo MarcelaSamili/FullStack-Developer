@@ -66,7 +66,7 @@ export default function Home() {
     return () => window.removeEventListener('resize', updateHeight);
   }, []);
   return (
-    <motion.main className="relative min-h-dvh overflow-x-hidden bg-bg_primary overflow-hidden lg:overflow-visible xl:overflow-visible p-10">
+    <motion.main className="relative min-h-dvh overflow-x-hidden bg-bg_primary overflow-hidden lg:overflow-visible xl:overflow-visible">
       <div className="relative justify-center items-center ml-10 mr-10 ">
         <Navigation />
         <Hero />
