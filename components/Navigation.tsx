@@ -28,7 +28,7 @@ const Navigation = () => {
 
     setLenis(lenisInstance);
 
-    //lenisInstance.on('scroll', ScrollTrigger.update);
+    lenisInstance.on('scroll', ScrollTrigger.update);
 
     function raf(time: number) {
       lenisInstance.raf(time);
