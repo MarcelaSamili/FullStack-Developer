@@ -2,7 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/*Isso ajuda a evitar bugs no mobile*/
 html, body {
   height: calc(100dvh - env(safe-area-inset-bottom));
   overflow-x: hidden;
