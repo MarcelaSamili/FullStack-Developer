@@ -5,7 +5,7 @@ const ContactMe = () => {
   return (
     <section
       id="contact"
-      className="relative flex justify-center items-center h-dvh "
+      className="relative flex justify-center items-center  pt-[10%] pb-[10%] "
     >
       <div className="relative flex h-[350px] w-[350px] flex-col items-center justify-center overflow-hidden rounded-3xl ">
         <Tree
