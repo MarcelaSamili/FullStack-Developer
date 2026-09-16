@@ -17,10 +17,11 @@ export const projects = [
   },
   {
     id: 2,
-    title: 'Awwards WebSite',
-    description: 'Clone do site Zentry.com, usando ReactJs, Tailwind CSS, GSAP',
+    title: 'Ecogame',
+    description:
+      'Plataforma Gamificada para aprendizagem de tecnologia e meio ambiente. Next.js, React.js, Tailwind CSS, TypeScript, Firebase  ',
     img: '/img/02.png',
-    link: 'https://github.com/MarcelaSamili/Awwwards-Website',
+    link: 'https://ecogame-lzzru17ag-marcela-barrosos-projects.vercel.app/',
   },
   {
     id: 3,
@@ -155,4 +156,4 @@ export const contactme_elements = [
 ];
 
 export const text_about =
-  'My Name is Marcela Barroso, I am a Full-Stark Developer Based in Ribeirão Preto, São Paulo, Brazil.I have a postgraduate degree in Full-Stark and Full-Cycle Development from XP Educação University and have been working on a wide range of full-stark projects, focusing on creating clean, well-designed interfaces that not only look great, but also provide a seamless user experience.';
+  'Meu nome é Marcela Barroso, sou desenvolvedora Full-Stark, atulmente estudante de Ciêmcia da Computação, pela Universidade Paulista UNIP, minha graduação será em 2030. Possuo certificação de 6 meses de Desenvolvimento Full-Stark e Full-Cycle pela Universidade XP Educação e diversos cursos complementares nas principais liguagens de progração. Tenho trabalhado em uma ampla gama de projetos Full-Stark, com foco na criação de interfaces limpas e bem projetadas que não apenas tenham uma ótima aparência, mas também proporcionem uma experiência de usuário perfeita.';
